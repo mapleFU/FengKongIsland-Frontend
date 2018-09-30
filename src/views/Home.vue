@@ -1,18 +1,25 @@
 <template>
   <div class="home">
-    <!--<img alt="Vue logo" src="../assets/logo.png">-->
-    <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <SideBar></SideBar>
+    <tool-bar :drawer="drawer"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import ToolBar from "../components/ToolBar.vue";
-
+import SideBar from "../components/SideBar.vue";
 export default {
   name: "home",
   components: {
+    SideBar,
     ToolBar
+  },
+  //  data drawer in two props
+  data: function() {
+    return {
+      drawer: true
+    };
   }
 };
 </script>

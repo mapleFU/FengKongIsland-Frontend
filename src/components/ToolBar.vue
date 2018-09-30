@@ -1,6 +1,6 @@
 <template>
-    <v-toolbar dark color="purple">
-        <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar dark color="purple" v-model="drawer">
+        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-toolbar-title> {{ title }}</v-toolbar-title>
 
         <v-spacer></v-spacer>
@@ -12,6 +12,8 @@
             </v-btn>
 
         </v-toolbar-items>
+
+
     </v-toolbar>
 </template>
 
@@ -39,7 +41,11 @@ export default {
           link_to: "/aboutme"
         }
       ]
+      // drawer: null
     };
+  },
+  props: {
+    drawer: Boolean
   }
 };
 </script>
