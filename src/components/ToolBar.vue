@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar dark color="purple" v-model="drawer">
+    <v-toolbar dark color="#9E9E9E" v-model="drawer">
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-toolbar-title> {{ title }}</v-toolbar-title>
 
