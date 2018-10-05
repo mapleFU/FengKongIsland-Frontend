@@ -36,7 +36,18 @@
         </v-expansion-panel>
 
 
-
+        <v-layout
+                align-center
+                justify-space-around
+                wrap
+        >
+            <v-avatar v-for="icon in icons" :key="icon.name">
+                <img
+                    :src="icon.img"
+                    alt="bangumi"
+                    >
+            </v-avatar>
+        </v-layout>
         <!--<v-list>-->
             <!--<NaviListTile-->
                     <!--v-for="nav_link in nav_links"-->
@@ -53,6 +64,13 @@
 <script>
 import Avatar from "./Avatar";
 import NaviListTile from "./NaviListTile";
+
+import bgm_icon from "../assets/icon/bangumi-icon1.png";
+import qq_icon from "../assets/icon/qq-icon.png";
+import douban_icon from "../assets/icon/douban-icon.png";
+import github_icon from "../assets/icon/github.png";
+import tg_icon from "../assets/icon/tg_icon.png";
+
 export default {
   name: "SideBar",
   components: { NaviListTile, Avatar },
@@ -70,7 +88,34 @@ export default {
         { title: "Home", link_to: "/home" },
         { title: "AboutMe", link_to: "/aboutMe" }
       ],
-      panel: [false]
+      panel: [false],
+      icons: [
+        {
+          name: "bangumi",
+          img: bgm_icon,
+          link_to: "http://bangumi.tv/user/404373"
+        },
+        {
+          name: "qq",
+          img: qq_icon,
+          link_to: "1506118561"
+        },
+        {
+          name: "douban",
+          img: douban_icon,
+          link_to: "https://www.douban.com/people/77065352/"
+        },
+        {
+          name: "github",
+          img: github_icon,
+          link_to: "https://github.com/mapleFU"
+        },
+        {
+          name: "telegram",
+          img: tg_icon,
+          link_to: "nmsl"
+        }
+      ]
     };
   },
   computed: {
