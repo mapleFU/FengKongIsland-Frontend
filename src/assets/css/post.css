@@ -1,0 +1,17 @@
+.post-detail {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+img {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+h1,
+h2 {
+    margin: 0 auto;
+    text-align: center;
+}

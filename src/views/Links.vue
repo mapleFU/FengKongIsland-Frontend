@@ -1,3 +1,4 @@
+<!--表示友情链接的页面-->
 <template>
     <p>Links</p>
 </template>

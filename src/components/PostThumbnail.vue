@@ -5,30 +5,32 @@
                 <v-card color="grey darken-2" class="white--text">
                     <v-card-text>
                         <h2 class="headline" d-block> {{ title }}</h2>
-                        <span class="content" >{{ blog_preview }}</span>
+                        <p><span class="content" >{{ blog_preview }}</span></p>
+
+                        <v-layout>
+                            <v-flex xs12 offset1>
+
+                                <div class="tags" >
+                                    <v-layout>
+                                        <v-flex md6 sm12>
+                                            <v-chip v-for="tag in tags" :key="tag.name"
+                                                    :to="tag.to" :small="true" color="gray">
+                                                <v-icon>tag</v-icon>
+                                                <!--<v-avatar color="blue">T</v-avatar>-->
+                                                {{tag.name}}
+                                            </v-chip>
+                                        </v-flex>
+                                    </v-layout>
+                                </div>
+
+                            </v-flex>
+                        </v-layout>
+
                     </v-card-text>
 
-                    <v-layout>
-                        <v-flex xs12 offset1>
-                            <div class="tags" >
-                                <v-layout>
-                                    <v-flex md6 sm12>
-                                        <v-chip v-for="tag in tags" :key="tag.name"
-                                                :to="tag.to" :small="true" color="gray">
-                                            <v-avatar color="blue">T</v-avatar>
-                                            {{tag.name}}
-                                        </v-chip>
-                                    </v-flex>
-                                </v-layout>
-                            </div>
-                            <div class="operations">
-                                <v-btn flat color="blue">进入阅读</v-btn>
-                            </div>
-                        </v-flex>
-                    </v-layout>
-                    <!--<v-card-actions>-->
-                        <!--<v-btn flat color="blue">进入阅读</v-btn>-->
-                    <!--</v-card-actions>-->
+                    <div class="operations">
+                        <v-btn flat color="blue">进入阅读</v-btn>
+                    </div>
 
                 </v-card>
 

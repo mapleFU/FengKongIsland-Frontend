@@ -1,3 +1,4 @@
+<!--首页-->
 <template>
   <div id="home">
 
@@ -7,7 +8,7 @@
       <Parallax/>
     </header>
 
-    <div id="body-container">
+    <div id="body-container" style="top: 0;">
     <!-- left sidebar -->
       <main class="column">
         <HomeBody></HomeBody>
