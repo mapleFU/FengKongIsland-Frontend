@@ -4,8 +4,7 @@
 
     <!-- html5 header -->
     <header>
-      <tool-bar :drawer="drawer"/>
-      <Parallax/>
+      <BlogHeader></BlogHeader>
     </header>
 
     <div id="body-container" style="top: 0;">
@@ -38,21 +37,20 @@
 // https://segmentfault.com/a/1190000004524159
 
 // @ is an alias to /src
-import ToolBar from "../components/ToolBar.vue";
 import SideBar from "../components/SideBar.vue";
-import Parallax from "../components/Parallax";
 import HomeBody from "../components/HomeBody";
 import DirectoryBar from "../components/DirectoryBar";
 import BlogFooter from "../components/BlogFooter";
+import BlogHeader from "../components/BlogHeader";
+
 export default {
   name: "home",
   components: {
     BlogFooter,
     DirectoryBar,
     HomeBody,
-    Parallax,
     SideBar,
-    ToolBar
+    BlogHeader
   },
   //  data drawer in two props
   data: function() {
@@ -68,13 +66,16 @@ export default {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+#body-container {
   background: url("../assets/47639788_p0.jpg");
 }
 
-header,
-footer {
-  flex: 1;
-}
+/*header,*/
+/*footer {*/
+/*flex: 1;*/
+/*}*/
 
 #body-container {
   display: flex;
