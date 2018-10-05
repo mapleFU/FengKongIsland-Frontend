@@ -1,6 +1,6 @@
 <template>
     <div class="nav-list-tile" >
-        <v-divider></v-divider>
+
 
         <!--<v-flex xs12 sm12>-->
 
@@ -27,6 +27,7 @@
 
             </v-list-tile>
         <!--</v-flex>-->
+        <v-divider></v-divider>
     </div>
 </template>
 

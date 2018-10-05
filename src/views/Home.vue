@@ -10,7 +10,7 @@
     <div id="body-container">
     <!-- left sidebar -->
       <main class="column">
-        <p>nmsl, wsngg</p>
+        <HomeBody></HomeBody>
       </main>
 
       <nav id="left-sidebar" class="column">
@@ -21,12 +21,13 @@
 
 
       <aside id="right-sidebar" class="column">
-        <p>right-sidebar</p>
+        <DirectoryBar></DirectoryBar>
       </aside>
     </div>
     <!-- html5 footer -->
+
     <footer>
-      <p>footer</p>
+      <BlogFooter></BlogFooter>
     </footer>
   </div>
 </template>
@@ -39,9 +40,15 @@
 import ToolBar from "../components/ToolBar.vue";
 import SideBar from "../components/SideBar.vue";
 import Parallax from "../components/Parallax";
+import HomeBody from "../components/HomeBody";
+import DirectoryBar from "../components/DirectoryBar";
+import BlogFooter from "../components/BlogFooter";
 export default {
   name: "home",
   components: {
+    BlogFooter,
+    DirectoryBar,
+    HomeBody,
     Parallax,
     SideBar,
     ToolBar
@@ -60,6 +67,7 @@ export default {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background: url("../assets/47639788_p0.jpg");
 }
 
 header,

@@ -16,31 +16,35 @@
         </v-list>
 
         <!--title-->
-        <v-toolbar flat
-                   class="grey darken-2"
+        <v-expansion-panel
+                dark
+            v-model="panel"
+            expand
+            name="description"
         >
-            <v-list-tile style="margin: 0 auto;">
-                <v-list-tile-title class="title text-lg-center">
-                    风空之枫
-                </v-list-tile-title>
-            </v-list-tile>
-        </v-toolbar>
+            <v-expansion-panel-content
+                    @click="panel[0] = !panel[0]"
+            >
+                <div slot="header" class="text-md-center title"><p>风空之枫</p></div>
+                <v-card>
+                    <v-card-text class="grey lighten-1 describe-text">
+                        <p v-for="text in text_lists" :key="text" class="text-md-center"> {{ text }} </p>
+                    </v-card-text>
+                </v-card>
+
+            </v-expansion-panel-content>
+        </v-expansion-panel>
 
 
 
-        <div class="describe-text">
-            <p v-for="text in text_lists" :key="text" class="text-md-center"> {{ text }} </p>
-        </div>
-
-
-        <v-list>
-            <NaviListTile
-                    v-for="nav_link in nav_links"
-                    :key="nav_link.title"
-                    :tag_name="nav_link.title"
-                    :link_to="nav_link.link_to"
-            />
-        </v-list>
+        <!--<v-list>-->
+            <!--<NaviListTile-->
+                    <!--v-for="nav_link in nav_links"-->
+                    <!--:key="nav_link.title"-->
+                    <!--:tag_name="nav_link.title"-->
+                    <!--:link_to="nav_link.link_to"-->
+            <!--/>-->
+        <!--</v-list>-->
 
 
     </v-navigation-drawer>
@@ -65,7 +69,8 @@ export default {
       nav_links: [
         { title: "Home", link_to: "/home" },
         { title: "AboutMe", link_to: "/aboutMe" }
-      ]
+      ],
+      panel: [false]
     };
   },
   computed: {
