@@ -2,7 +2,8 @@
     <a :href="link_to">
         <v-chip :small="true" color="gray" :to="link_to">
             <v-icon>tag</v-icon>
-            {{ tag_name }}
+            <span class="inner_text"> {{ tag_name }} </span>
+            <span v-if="count !== null" style="margin-left: 5px;"> {{ count }}</span>
         </v-chip>
     </a>
     <!--<v-chip v-for="tag in tags" :key="tag.name"-->
@@ -16,7 +17,23 @@
 <script>
 export default {
   name: "Tag",
-  props: ["tag_name", "link_to"]
+  // props: ["tag_name", "link_to", "count"]
+  props: {
+    tag_name: {
+      required: true,
+      type: String
+    },
+    link_to: {
+      required: false,
+      default: "/home",
+      type: String
+    },
+    count: {
+      required: false,
+      default: null,
+      type: [Number, null]
+    }
+  }
 };
 </script>
 

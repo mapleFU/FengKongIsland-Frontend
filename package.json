@@ -10,14 +10,18 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0-rc.1",
     "axios": "^0.18.0",
+    "cnpm": "^6.0.0",
     "han-css": "^3.3.0",
+    "install": "^0.12.1",
     "markdown-it": "^8.4.2",
     "markdown-loader": "^4.0.0",
+    "or": "^0.2.0",
     "register-service-worker": "^1.0.0",
     "stylus-loader": "^3.0.2",
     "typo.css": "^2.1.2",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
+    "vue2-lazy-tree": "^1.2.8",
     "vuetify": "^1.2.0"
   },
   "devDependencies": {

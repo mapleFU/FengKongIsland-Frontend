@@ -33,20 +33,25 @@
                     <div slot="header" class="text-md-center title"><p>标签列表</p></div>
 
                     <!--render field-->
-                    <template v-if="tags !== []">
-                        <v-list>
-                            <v-layout
-                                    align-center
-                                    justify-space-around
-                                    wrap
-                            >
-                                <!--how to deal with link to-->
+                    <div class="inner">
+                        <template v-if="tags !== []" class="inner">
+                            <v-list>
+                                <v-layout
+                                        align-center
+                                        justify-space-around
+                                        wrap
+                                >
+                                    <!--how to deal with link to-->
 
-                                    <Tag v-for="tag in tags" :key="tag.tag_name" link_to="/home" :tag_name="tag.tag_name"></Tag>
+                                        <Tag v-for="tag in tags" :key="tag.tag_name"
+                                             link_to="/home"
+                                             :tag_name="tag.tag_name"
+                                             :count="tag.related_posts"></Tag>
 
-                            </v-layout>
-                        </v-list>
-                    </template>
+                                </v-layout>
+                            </v-list>
+                        </template>
+                    </div>
                 </v-expansion-panel-content>
 
                 <v-expansion-panel-content
@@ -68,10 +73,12 @@ import NaviListTile from "./NaviListTile";
 import Tag from "./Tag";
 import { server_address } from "../constexpr";
 
+import { ZTree } from "vue2-lazy-tree";
+
 const TagsQuery = "tags/";
 export default {
   name: "DirectoryBar",
-  components: { Tag, NaviListTile },
+  components: { Tag, NaviListTile, ZTree },
   data: function() {
     return {
       panel: [true, true, true],
@@ -95,6 +102,45 @@ export default {
           this.tags.push(tag_data);
         }
       });
+    },
+    sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+  },
+  computed: {
+    dynamicChildrenContext() {
+      return {
+        // here we could have some object,
+        // $store reference for dispatching an action
+        // or something else...
+      };
+    },
+    // BUG in eslint: https://github.com/vuejs/eslint-plugin-vue/issues/420
+    // --> using eslint-disable-next-line
+    dynamicItems() {
+      // create a new tree, but reuse existing children
+      let calculatedTreeItems = {
+        id: 0,
+        name: "Root",
+        children: [...this.items.children]
+      };
+      // let's make a new first child under the root which will have dynamic children
+      let newFirstChild = {
+        id: 100,
+        name: "Dynamic Children are here",
+        children: null
+      };
+      // eslint-disable-next-line
+      calculatedTreeItems.children.unshift(newFirstChild);
+      // we now check if the child has already been loaded
+      if (this.dynamicallyLoadedChild) {
+        // child is loaded - then make the children a regular array
+        newFirstChild.children = [this.dynamicallyLoadedChild];
+      } else {
+        // there is no child yet loaded -> point children to a function!
+        newFirstChild.children = this.loadDynamicChild;
+      }
+      return calculatedTreeItems;
     }
   }
 };

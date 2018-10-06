@@ -10,7 +10,8 @@ import ToolBar from "./ToolBar";
 import Parallax from "./Parallax";
 export default {
   name: "HomeHeader",
-  components: { Parallax, ToolBar }
+  components: { Parallax, ToolBar },
+  drawer: true
 };
 </script>
 
