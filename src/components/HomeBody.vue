@@ -1,12 +1,12 @@
 <template>
-    <PostThumbnail></PostThumbnail>
+    <PostList></PostList>
 </template>
 
 <script>
-import PostThumbnail from "./PostThumbnail";
+import PostList from "./PostList";
 export default {
   name: "HomeBody",
-  components: { PostThumbnail }
+  components: { PostList }
 };
 </script>
 

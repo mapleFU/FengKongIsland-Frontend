@@ -1,64 +1,59 @@
 <template>
-    <v-navigation-drawer
-            permanent
-            style="background: #9E9E9E;"
-    >
-        <!--list-->
-        <v-list
-                align-center="true"
-                align-content-center
-                class="use-bkg"
+    <div class="side-bar">
+        <v-navigation-drawer
+                permanent
+                style="background: #9E9E9E;"
+                elevation-10
         >
-            <!--should i justify centor...-->
-            <v-layout justify-center>
-                <Avatar />
-            </v-layout>
-        </v-list>
-
-        <!--title-->
-        <v-expansion-panel
-                dark
-            v-model="panel"
-            expand
-            name="description"
-        >
-            <v-expansion-panel-content
-                    @click="panel[0] = !panel[0]"
+            <!--list-->
+            <v-list
+                    align-center="true"
+                    align-content-center
+                    class="use-bkg"
             >
-                <div slot="header" class="text-md-center title"><p>风空之枫</p></div>
-                <v-card>
-                    <v-card-text class="grey lighten-1 describe-text">
-                        <p v-for="text in text_lists" :key="text" class="text-md-center"> {{ text }} </p>
-                    </v-card-text>
-                </v-card>
+                <!--should i justify centor...-->
+                <v-layout justify-center>
+                    <Avatar />
+                </v-layout>
+            </v-list>
 
-            </v-expansion-panel-content>
-        </v-expansion-panel>
+            <!--title-->
+            <v-expansion-panel
+                    v-model="panel"
+                    expand
+                    name="description"
+            >
+                <v-expansion-panel-content
+                        @click="panel[0] = !panel[0]"
+                        style="background-color: #616161;"
+
+                >
+                    <div slot="header" class="text-md-center title" ><p>风空之枫</p></div>
+                    <v-card>
+                        <v-card-text class="grey lighten-1 describe-text">
+                            <p v-for="text in text_lists" :key="text" class="text-md-center"> {{ text }} </p>
+                        </v-card-text>
+                    </v-card>
+
+                </v-expansion-panel-content>
+            </v-expansion-panel>
 
 
-        <v-layout
-                align-center
-                justify-space-around
-                wrap
-        >
-            <v-avatar v-for="icon in icons" :key="icon.name">
-                <img
-                    :src="icon.img"
-                    alt="bangumi"
+            <v-layout
+                    align-center
+                    justify-space-around
+                    wrap
+            >
+                <v-avatar v-for="icon in icons" :key="icon.name">
+                    <img
+                            :src="icon.img"
+                            alt="bangumi"
                     >
-            </v-avatar>
-        </v-layout>
-        <!--<v-list>-->
-            <!--<NaviListTile-->
-                    <!--v-for="nav_link in nav_links"-->
-                    <!--:key="nav_link.title"-->
-                    <!--:tag_name="nav_link.title"-->
-                    <!--:link_to="nav_link.link_to"-->
-            <!--/>-->
-        <!--</v-list>-->
+                </v-avatar>
+            </v-layout>
 
-
-    </v-navigation-drawer>
+        </v-navigation-drawer>
+    </div>
 </template>
 
 <script>
@@ -81,7 +76,7 @@ export default {
         "backend developer",
         "web/database/system",
         "acgn/sf",
-        "stage1st/bangumi/douban er",
+        "s1/bgm/douban er",
         "dispossessed"
       ],
       nav_links: [

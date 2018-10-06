@@ -7,7 +7,7 @@
             <v-card
                     flat
                     tile
-                    color="#424242"
+                    color="grey darken-4"
                     class="white--text text-xs-center"
                     style="width: 100%; margin: 0 auto; float: left;"
             >

@@ -1,8 +1,8 @@
 <template>
     <div class="post-thumbnail">
-        <v-layout>
-            <v-flex xs12 offset1>
-                <v-card color="grey darken-2" class="white--text">
+        <v-layout >
+            <v-flex xs10 offset-xs1>
+                <v-card color="grey darken-2" class="white--text"  elevation-10>
                     <v-card-text>
                         <h2 class="headline" d-block> {{ title }}</h2>
                         <p><span class="content" >{{ blog_preview }}</span></p>
@@ -13,12 +13,12 @@
                                 <div class="tags" >
                                     <v-layout>
                                         <v-flex md6 sm12>
-                                            <v-chip v-for="tag in tags" :key="tag.name"
-                                                    :to="tag.to" :small="true" color="gray">
-                                                <v-icon>tag</v-icon>
-                                                <!--<v-avatar color="blue">T</v-avatar>-->
-                                                {{tag.name}}
-                                            </v-chip>
+                                            <Tag v-for="tag in tags"
+                                                 :key="tag.name"
+                                                 :link_to="tag.to"
+                                                 :tag_name="tag.name"
+                                            />
+
                                         </v-flex>
                                     </v-layout>
                                 </div>
@@ -34,7 +34,6 @@
 
                 </v-card>
 
-
             </v-flex>
         </v-layout>
 
@@ -43,9 +42,11 @@
 </template>
 
 <script>
+import Tag from "./Tag";
 export default {
   name: "PostThumbnail",
-  data: function() {
+    components: {Tag},
+    data: function() {
     return {
       blog_preview: "你妈死了，我是你哥哥，我们都是你妈的儿子",
       title: "笑川大佐语录",

@@ -69,7 +69,7 @@ export default {
 }
 
 #body-container {
-  background: url("../assets/47639788_p0.jpg");
+  background-color: #424242;
 }
 
 /*header,*/
@@ -84,6 +84,7 @@ export default {
 
 main {
   flex: 1;
+  margin-top: 20px;
 }
 
 nav,
