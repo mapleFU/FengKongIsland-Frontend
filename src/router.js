@@ -34,12 +34,12 @@ export default new Router({
       component: AboutMe
     },
     {
-      path: "/BlogSearchPage",
+      path: "/search",
       name: "blogSearchPage",
       component: BlogSearchPage
     },
     {
-      path: "/DetailArticle",
+      path: "/post/:uuid",
       name: "detailArticle",
       component: DetailArticle
     }

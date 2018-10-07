@@ -12,7 +12,13 @@
         </v-layout>
         <!--<h1> {{ post_list_title }} </h1>-->
         <div class="thumbnails" v-for="post in currentPagePosts" :key="post.uuid">
-            <PostThumbnail :abstract="post.abstract" :title="post.title" :tags="post.tags" :published_time="post.created_time"> </PostThumbnail>
+            <PostThumbnail
+                    :abstract="post.abstract"
+                    :title="post.title"
+                    :tags="post.tags"
+                    :published_time="post.created_time"
+                    :blog_id="post.uuid"
+            > </PostThumbnail>
             <v-divider></v-divider>
         </div>
 
@@ -29,14 +35,7 @@
 
 <script>
 import axios from "axios";
-// Post data structure
-// {
-//     "title": "这是一篇测试文章",
-//     "author": "e049456d-a472-47e6-bb58-4a5208a039ce",
-//     "reading": 0,
-//     "tags": [],
-//     "abstract": null
-// }
+
 import PostThumbnail from "./PostThumbnail";
 export default {
   name: "PostList",
@@ -47,6 +46,11 @@ export default {
     requestBaseUrl: {
       required: true,
       type: String
+    },
+    post_list_title: {
+      required: false,
+      default: "近期博客",
+      type: String
     }
   },
   data: function() {
@@ -54,7 +58,6 @@ export default {
       // 所在页面的数目
       currentPagePosts: [],
       allPages: 0,
-      post_list_title: "近期博客",
       allDataCount: 0,
       currentPage: 1
     };

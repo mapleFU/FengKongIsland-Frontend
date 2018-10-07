@@ -18,6 +18,7 @@
                                                      :key="tag.uuid"
                                                      :link_to="tag.to"
                                                      :tag_name="tag.tag_name"
+                                                     :uuid="tag.uuid"
                                                 />
 
                                             </v-flex>
@@ -31,7 +32,10 @@
                     </v-card-text>
 
                     <div class="operations">
-                        <v-btn flat color="blue">进入阅读</v-btn>
+                        <router-link :to="real_link">
+                            <v-btn flat color="blue">进入阅读</v-btn>
+                        </router-link>
+
                     </div>
 
                 </v-card>
@@ -55,7 +59,7 @@ export default {
     blog_link: {
       required: false,
       type: String,
-      default: "/home"
+      default: "/post"
     },
     published_time: {
       required: false,
@@ -69,11 +73,20 @@ export default {
     abstract: {
       required: true,
       type: String
+    },
+    blog_id: {
+      required: true,
+      type: String
     }
   },
   components: { Tag },
   data: function() {
     return {};
+  },
+  computed: {
+    real_link: function() {
+      return this.blog_link + "/" + this.blog_id;
+    }
   }
 };
 </script>

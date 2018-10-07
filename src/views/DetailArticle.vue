@@ -1,5 +1,6 @@
-<!-- 文章详情页面 -->
+
 <template>
+    <!-- 文章详情页面 -->
     <div id="detail-article">
         <!--<p> 文章详情页面 </p>-->
         <header>
@@ -9,13 +10,15 @@
             <!--<nav >-->
                 <!--<SideBar></SideBar>-->
             <!--</nav>-->
-            <v-layout>
-                <v-flex xs12 offset-xs2>
-                    <main >
-                        <PostDetail></PostDetail>
-                    </main>
-                </v-flex>
-            </v-layout>
+            <main>
+                <v-layout style="background-color: #424242;">
+                    <v-flex xs12 offset-xs2 style="background-color: #424242;">
+                        <main style="background-color: #424242;">
+                            <PostDetail></PostDetail>
+                        </main>
+                    </v-flex>
+                </v-layout>
+            </main>
 
             <aside >
                 <DirectoryBar></DirectoryBar>
@@ -55,10 +58,12 @@ export default {
 #body-container {
   display: flex;
   flex: 1;
+  background-color: #424242;
 }
 
 main {
   flex: 1;
+  background-color: #424242;
 }
 
 aside {

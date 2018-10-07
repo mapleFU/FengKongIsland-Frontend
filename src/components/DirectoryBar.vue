@@ -42,11 +42,14 @@
                                         wrap
                                 >
                                     <!--how to deal with link to-->
+                                        <!--TODO: modify it-->
 
-                                        <Tag v-for="tag in tags" :key="tag.tag_name"
+                                        <Tag v-for="tag in tags" :key="tag.uuid"
                                              link_to="/home"
                                              :tag_name="tag.tag_name"
-                                             :count="tag.related_posts"></Tag>
+                                             :count="tag.related_posts"
+                                             :uuid="tag.uuid"
+                                        ></Tag>
 
                                 </v-layout>
                             </v-list>
