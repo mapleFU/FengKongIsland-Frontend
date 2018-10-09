@@ -26,7 +26,6 @@
 <script>
 import axios from "axios";
 // http://localhost:8081/detailArticle
-import test_post from "../test-assets/test-article.md";
 import BlogFooter from "./BlogFooter";
 import { protocol, server_detailpost_address } from "../constexpr";
 
@@ -42,9 +41,9 @@ export default {
     return {
       //  markdown content
       post_uid: null,
-      content: test_post,
-      title: "nmsl",
-      html_content: test_post,
+      content: "",
+      title: "",
+      html_content: "",
       created_time: null,
       last_edit_time: null,
       tags: []
