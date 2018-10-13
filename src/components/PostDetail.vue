@@ -107,14 +107,10 @@ export default {
 
 .content-html >>> h1,
 .content-html >>> h2,
-.content-html >>> table,
-.content-html >>> ul,
-.content-html >>> ol,
 .content-html >>> h3,
 .content-html >>> h4,
 .content-html >>> h5,
-.content-html >>> h6,
-.content-html >>> code {
+.content-html >>> h6 {
   margin: 0 auto;
   text-align: center;
 }
@@ -145,6 +141,18 @@ h1 {
 }
 
 .post-container >>> p {
-  text-align: center;
+  /*text-align: center;*/
+  line-height: 1.2em;
+  text-indent: 1.2em;
+}
+.post-container >>> pre > code {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+
+.post-container >>> code {
+  background-color: beige;
 }
 </style>
