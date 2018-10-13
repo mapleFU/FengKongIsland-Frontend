@@ -32,7 +32,7 @@
                     </v-card-text>
 
                     <div class="operations">
-                        <router-link :to="real_link">
+                        <router-link :to="real_link" style="text-decoration: none;">
                             <v-btn flat color="blue">进入阅读</v-btn>
                         </router-link>
 

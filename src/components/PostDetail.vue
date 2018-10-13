@@ -29,8 +29,10 @@ import axios from "axios";
 import BlogFooter from "./BlogFooter";
 import { protocol, server_detailpost_address } from "../constexpr";
 
-var MarkdownIt = require("markdown-it"),
+const MarkdownIt = require("markdown-it"),
   md = new MarkdownIt();
+const meta = require("markdown-it-meta");
+md.use(meta);
 
 // TODO: 添加目录、时间等
 export default {
@@ -59,7 +61,6 @@ export default {
     // }
   },
   created: function() {
-    console.log(this.$router);
     this.post_uid = this.$route.params.uuid;
     this.getPost(this.post_uid);
   },
@@ -105,7 +106,15 @@ export default {
 }
 
 .content-html >>> h1,
-.content-html >>> h2 {
+.content-html >>> h2,
+.content-html >>> table,
+.content-html >>> ul,
+.content-html >>> ol,
+.content-html >>> h3,
+.content-html >>> h4,
+.content-html >>> h5,
+.content-html >>> h6,
+.content-html >>> code {
   margin: 0 auto;
   text-align: center;
 }
@@ -120,8 +129,8 @@ export default {
 
 .content-html >>> p,
 .content-html >>> li {
-  text-indent: 1.2em;
-  font-size: 1.2em;
+  text-indent: 1.1em;
+  font-size: 1.1em;
 }
 
 .content-html >>> img {

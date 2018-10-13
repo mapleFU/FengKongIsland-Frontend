@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{path: link_to, query: {tag: uuid}}">
+    <router-link :to="{path: link_to, query: {tag: uuid}}" style="text-decoration: none;">
         <v-chip :small="true" color="gray" >
             <v-icon>tag</v-icon>
             <span class="inner_text"> {{ tag_name }} </span>
@@ -39,7 +39,7 @@ export default {
     }
   },
   created: function() {
-    console.log(this.uuid);
+    // console.log(this.uuid);
   },
   computed: {
     real_link: function() {

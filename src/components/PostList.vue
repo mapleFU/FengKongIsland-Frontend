@@ -73,8 +73,8 @@ export default {
         this.allDataCount = data["count"];
         this.allPages = Math.ceil(this.allDataCount / 6);
         this.currentPagePosts = data["results"];
-        console.log(this.allPages);
-        console.log(this.allDataCount);
+        // console.log(this.allPages);
+        // console.log(this.allDataCount);
       });
     }
   },

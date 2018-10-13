@@ -1,25 +1,18 @@
 <!--表示友情链接的页面-->
 <template>
     <div id="links">
-        <p>Links</p>
-        <tool-bar :drawer="drawer"/>
-        <Parallax/>
-
-        <p>Links</p>
-        <p>Links</p>
-        <p>Links</p><p>Links</p>
-        <p>Links</p><p>Links</p><p>Links</p><p>Links</p><p>Links</p><p>Links</p><p>Links</p><p>Links</p><p>Links</p>
-
-
+        <!--<PostDetail></PostDetail>-->
+        <p>links</p>
     </div>
 </template>
 
 <script>
 import ToolBar from "../components/ToolBar";
 import Parallax from "../components/Parallax";
+import PostDetail from "../components/PostDetail";
 export default {
   name: "Links",
-  components: { Parallax, ToolBar },
+  components: {PostDetail, Parallax, ToolBar },
   data: function() {
     return {
       drawer: true
