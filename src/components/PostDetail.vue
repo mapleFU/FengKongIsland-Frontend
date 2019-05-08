@@ -114,5 +114,34 @@ export default {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
+
+  img {
+    max-width: 80%;
+    margin: 0 auto;
+    align-self: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  code {
+    border: 0;
+    /*background-color: transparent;*/
+    /*width: 100%;*/
+    padding: 0 auto;
+
+    height: 100%;
+
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*display: inline-table;*/
+  }
+
+  pre {
+    width: -moz-fit-content;
+    /*width: -webkit-fit-content;*/
+    width: fit-content;
+    margin: 0 auto;
+  }
 }
 </style>
