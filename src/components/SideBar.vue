@@ -4,6 +4,7 @@
                 permanent
                 style="background: #9E9E9E;"
                 elevation-10
+                v-bind:fixed="fixed"
         >
             <!--list-->
             <v-list
@@ -69,6 +70,10 @@ import tg_icon from "../assets/icon/tg_icon.png";
 export default {
   name: "SideBar",
   components: { NaviListTile, Avatar },
+  props: {
+    fixed: Boolean,
+    default: true
+  },
   data: function() {
     return {
       text_lists: [

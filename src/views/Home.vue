@@ -82,6 +82,10 @@ export default {
   flex: 1;
 }
 
+#left-sidebar {
+  position: -webkit-sticky;
+}
+
 main {
   flex: 1;
   margin-top: 20px;

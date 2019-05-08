@@ -2,14 +2,14 @@
 <template>
     <div class="post-list">
         <!--pages-->
-        <v-layout
-                align-center
-                column
-                justify-center
-        >
-            <h1 class="display-2 font-weight-thin mb-3 text--white"> {{ post_list_title }} </h1>
-            <!--<h4 class="subheading">冒险者的遥远故乡</h4>-->
-        </v-layout>
+        <!--<v-layout-->
+                <!--align-center-->
+                <!--column-->
+                <!--justify-center-->
+        <!--&gt;-->
+            <!--<h1 class="display-2 font-weight-thin mb-3 text&#45;&#45;white"> {{ post_list_title }} </h1>-->
+            <!--&lt;!&ndash;<h4 class="subheading">冒险者的遥远故乡</h4>&ndash;&gt;-->
+        <!--</v-layout>-->
         <!--<h1> {{ post_list_title }} </h1>-->
         <div class="thumbnails" v-for="post in currentPagePosts" :key="post.uuid">
             <PostThumbnail
@@ -46,12 +46,12 @@ export default {
     requestBaseUrl: {
       required: true,
       type: String
-    },
-    post_list_title: {
-      required: false,
-      default: "近期博客",
-      type: String
     }
+    // post_list_title: {
+    //   required: false,
+    //   default: "近期博客",
+    //   type: String
+    // }
   },
   data: function() {
     return {

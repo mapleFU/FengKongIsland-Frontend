@@ -11,7 +11,12 @@ import Parallax from "./Parallax";
 export default {
   name: "HomeHeader",
   components: { Parallax, ToolBar },
-  drawer: true
+  props: {
+    drawer: {
+      type: Boolean,
+      default: true
+    }
+  }
 };
 </script>
 
