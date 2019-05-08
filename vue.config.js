@@ -10,11 +10,11 @@ module.exports = {
   },
   pwa: {
     iconPaths: {
-      favicon32: "https://nmsl.maplewish.cn/favicon.ico",
-      favicon16: "https://nmsl.maplewish.cn/favicon.ico",
-      appleTouchIcon: "https://nmsl.maplewish.cn/favicon.ico",
-      maskIcon: "https://nmsl.maplewish.cn/favicon.ico",
-      msTileImage: "https://nmsl.maplewish.cn/favicon.ico"
+      favicon32: "img/icons/favicon.ico",
+      favicon16: "img/icons/favicon.ico",
+      appleTouchIcon: "img/icons/favicon.ico",
+      maskIcon: "img/icons/favicon.ico",
+      msTileImage: "img/icons/favicon.ico"
     }
   }
 };
