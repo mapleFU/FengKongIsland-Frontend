@@ -1,50 +1,24 @@
 <template>
-    <div class="post-thumbnail">
+    <v-container class="post-thumbnail">
         <v-layout >
             <v-flex xs10 offset-xs1>
-                <v-card color="grey darken-2" class="white--text"  elevation-10>
-                    <v-card-text>
-                        <h2 class="headline" d-block> {{ title }}</h2>
-                        <p><span class="content" >{{ abstract }}</span></p>
-
-                        <div class="tags" v-if="tags !== []">
-                            <v-layout>
-                                <v-flex xs12 offset1>
+                <p class="display-1 font-weight-light white--text">
+                    <router-link :to="real_link"  style="text-decoration: none;" class="display-1 font-weight-light white--text">
+                        {{title}}
+                    </router-link>
+                </p>
 
 
-                                        <v-layout>
-                                            <v-flex md6 sm12>
-                                                <Tag v-for="tag in tags"
-                                                     :key="tag.uuid"
-                                                     :link_to="tag.to"
-                                                     :tag_name="tag.tag_name"
-                                                     :uuid="tag.uuid"
-                                                />
-
-                                            </v-flex>
-                                        </v-layout>
-
-
-                                </v-flex>
-                            </v-layout>
-                        </div>
-
-                    </v-card-text>
-
-                    <div class="operations">
-                        <router-link :to="real_link" style="text-decoration: none;">
-                            <v-btn flat color="blue">进入阅读</v-btn>
-                        </router-link>
-
-                    </div>
-
-                </v-card>
+                <p class="caption font-weight-bold grey--text">发布于: {{ published_time }} </p>
+                <section class="body-2">
+                    {{abstract}}
+                </section>
 
             </v-flex>
         </v-layout>
 
 
-    </div>
+    </v-container>
 </template>
 
 <script>

@@ -71,7 +71,7 @@ export default {
       axios.get(req_url).then(resp => {
         let data = resp.data;
         this.allDataCount = data["count"];
-        this.allPages = Math.ceil(this.allDataCount / 6);
+        this.allPages = Math.ceil(this.allDataCount / 4);
         this.currentPagePosts = data["results"];
         // console.log(this.allPages);
         // console.log(this.allDataCount);
