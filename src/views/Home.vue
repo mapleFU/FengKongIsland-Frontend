@@ -2,28 +2,47 @@
 <template>
   <div id="home">
 
+
     <!-- html5 header -->
     <header>
       <BlogHeader></BlogHeader>
     </header>
 
-    <div id="body-container" style="top: 0;">
-    <!-- left sidebar -->
-      <main class="column">
-        <HomeBody></HomeBody>
-      </main>
+    <v-container id="body-container" justify-space-around fluid>
+      <v-layout row
+      >
+        <v-flex xs3>
+          <SideBar id="left-sidebar"></SideBar>
+        </v-flex>
 
-      <nav id="left-sidebar" class="column">
+        <v-flex xs6>
+          <HomeBody></HomeBody>
+        </v-flex>
 
-        <SideBar></SideBar>
-      </nav>
+        <v-flex xs3>
+          <DirectoryBar></DirectoryBar>
+        </v-flex>
+
+      </v-layout>
+    </v-container>
+
+    <!--<div id="body-container" style="top: 0;">-->
+    <!--&lt;!&ndash; left sidebar &ndash;&gt;-->
+      <!--<main class="column">-->
+        <!--<HomeBody></HomeBody>-->
+      <!--</main>-->
+
+      <!--<nav id="left-sidebar" class="column">-->
+
+        <!--<SideBar></SideBar>-->
+      <!--</nav>-->
 
 
 
-      <aside id="right-sidebar" class="column">
-        <DirectoryBar></DirectoryBar>
-      </aside>
-    </div>
+      <!--<aside id="right-sidebar" class="column">-->
+        <!--<DirectoryBar></DirectoryBar>-->
+      <!--</aside>-->
+    <!--</div>-->
     <!-- html5 footer -->
 
     <footer>
@@ -84,6 +103,8 @@ export default {
 
 #left-sidebar {
   position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 main {

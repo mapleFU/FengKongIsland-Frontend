@@ -27,14 +27,20 @@
                 <v-expansion-panel-content
                         @click="panel[0] = !panel[0]"
                         style="background-color: #616161;"
-
                 >
-                    <div slot="header" class="text-md-center title" ><p>风空之枫</p></div>
-                    <v-card>
-                        <v-card-text class="grey lighten-1 describe-text">
-                            <p v-for="text in text_lists" :key="text" class="text-md-center"> {{ text }} </p>
-                        </v-card-text>
-                    </v-card>
+                    <div slot="header" class="text-md-center title" >
+                        风空之枫
+                    </div>
+
+                    <!--<v-card-text class="grey lighten-1 describe-text">-->
+                        <!--&lt;!&ndash;<v-card-text class="grey lighten-1 describe-text">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<p v-for="text in text_lists" :key="text" class="text-md-center"> {{ text }} </p>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</v-card-text>&ndash;&gt;-->
+                        <!--<p class="text-md-center">nmsl</p>-->
+                    <!--</v-card-text>-->
+                    <section class="grey lighten-1 describe-text" text-align="center">
+                        <p v-for="text in text_lists" :key="text" align="center"> {{ text }} </p>
+                    </section>
 
                 </v-expansion-panel-content>
             </v-expansion-panel>
@@ -136,16 +142,16 @@ Avator {
 }
 
 .describe-text {
-  font-family: Monaco;
+  /*font-family: Monaco;*/
   font-size: 1.2em;
-  text-align-all: center;
   line-height: 1.5em;
   font-weight: normal;
 
   margin: 0 auto;
-  text-indent: 1.5em;
+  /*text-indent: 1.5em;*/
   /*background-color: #b388ff;*/
 }
+
 .describe-text > p {
   margin: 0 auto;
 }
