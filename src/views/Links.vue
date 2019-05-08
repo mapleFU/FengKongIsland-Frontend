@@ -12,7 +12,7 @@ import Parallax from "../components/Parallax";
 import PostDetail from "../components/PostDetail";
 export default {
   name: "Links",
-  components: {PostDetail, Parallax, ToolBar },
+  components: { PostDetail, Parallax, ToolBar },
   data: function() {
     return {
       drawer: true

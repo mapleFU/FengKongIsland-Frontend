@@ -6,8 +6,6 @@
 import PostList from "./PostList";
 import { server_main_page } from "../constexpr";
 
-console.log(server_main_page);
-
 export default {
   name: "HomeBody",
   components: { PostList },

@@ -1,33 +1,45 @@
 <template>
-    <div class="post-detail" elevation-1>
-        <v-container >
-            <v-layout
-                    align-center
-            >
-                <v-flex  class="post-container" elevation-5>
-                    <!--TODO: 添加 TAGS -->
-                    <h1 text--lighten-2 style="margin: 0 auto">{{ title }}</h1>
-                    <p>文章写于 {{ created_time }}</p>
-                    <p>最后编辑于 {{ last_edit_time }}</p>
-                    <v-divider></v-divider>
+    <!--<HomeHeader></HomeHeader>-->
 
-                    <span class="content-html" v-html="html_content"> </span>
+    <v-container
+            elevation-5
+    >
+        <v-layout
 
-                    <v-divider></v-divider>
-                    <!--TODO: 添加 阅读量-->
+        >
+            <v-flex  xs10 offset-xs1 class="post-container" >
+                <!--TODO: 添加 TAGS -->
+                <h1 text--lighten-2 style="margin: 0 auto">{{ title }}</h1>
+                <p>文章写于 {{ created_time }}</p>
+                <!--<p>最后编辑于 {{ last_edit_time }}</p>-->
+                <v-divider></v-divider>
 
-                </v-flex>
-            </v-layout>
+                <!--<vue-markdown>i am a ~~tast~~ **test**.</vue-markdown>-->
+                <!--<vue-markdown>{{content}}</vue-markdown>-->
+                <article class="content-html" v-html="html_content">
 
-        </v-container>
-    </div>
+                </article>
+                <!--<vue-markdown> {{content}}</vue-markdown>-->
+
+                <v-divider></v-divider>
+                <!--TODO: 添加 阅读量-->
+
+            </v-flex>
+        </v-layout>
+
+    </v-container>
+
 </template>
 
 <script>
 import axios from "axios";
 // http://localhost:8081/detailArticle
 import BlogFooter from "./BlogFooter";
+import VueMarkdown from "vue-markdown";
 import { protocol, server_detailpost_address } from "../constexpr";
+import HomeHeader from "./BlogHeader";
+
+// import typo from "typo.css";
 
 const MarkdownIt = require("markdown-it"),
   md = new MarkdownIt();
@@ -37,7 +49,7 @@ md.use(meta);
 // TODO: 添加目录、时间等
 export default {
   name: "PostDetail",
-  components: { BlogFooter },
+  components: { HomeHeader, BlogFooter, "vue-markdown": VueMarkdown },
   props: ["post_url"],
   data: function() {
     return {
@@ -48,7 +60,8 @@ export default {
       html_content: "",
       created_time: null,
       last_edit_time: null,
-      tags: []
+      tags: [],
+      mkd: ""
     };
   },
   computed: {
@@ -69,6 +82,7 @@ export default {
       let req_url = protocol + server_detailpost_address + post_uuid + "/";
       axios.get(req_url).then(resp => {
         let data = resp.data;
+
         this.content = data.content;
         this.title = data.title;
         this.created_time = data.created_time;
@@ -82,77 +96,23 @@ export default {
 };
 </script>
 
-<style src="typo.css" scoped>
-</style>
-<style scoped >
-.post-detail {
-  width: 100%;
-  /*display: table-cell;*/
-  vertical-align: middle;
-  background-color: #424242;
-}
 
-.post-container {
-  background-color: #626262;
-}
-
-.content-html >>> img {
-  text-align: center;
-  /*display: table-cell;*/
-  /*vertical-align: middle;*/
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.content-html >>> h1,
-.content-html >>> h2,
-.content-html >>> h3,
-.content-html >>> h4,
-.content-html >>> h5,
-.content-html >>> h6 {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.content-html >>> h1 {
-  /*color: blue;*/
-}
-
-.content-html >>> h2 {
-  /*color: darkblue;*/
-}
-
-.content-html >>> p,
-.content-html >>> li {
-  text-indent: 1.1em;
-  font-size: 1.1em;
+<style lang="scss">
+.content-html {
+  @import "~typo.css";
 }
 
 .content-html >>> img {
   max-width: 80%;
-}
-
-h1 {
   margin: 0 auto;
-  font-size: 3em;
-  text-align: center;
-  font-weight: bold;
 }
 
-.post-container >>> p {
-  /*text-align: center;*/
-  line-height: 1.2em;
-  text-indent: 1.2em;
-}
-.post-container >>> pre > code {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80%;
-}
-
-.post-container >>> code {
-  background-color: beige;
+.content-html {
+  html {
+    font-size: 100%;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
 }
 </style>

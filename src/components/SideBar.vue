@@ -87,7 +87,7 @@ export default {
         "backend developer",
         "web/database/system",
         "acgn/sf",
-        "s1/bgm/douban er",
+        "s1/bgm/douban user",
         "dispossessed"
       ],
       nav_links: [
@@ -157,7 +157,7 @@ Avator {
 }
 
 .use-bkg {
-  background: url("../assets/lib.jpg");
+  background: url("../assets/lib-min.jpg");
 }
 
 .list-content {

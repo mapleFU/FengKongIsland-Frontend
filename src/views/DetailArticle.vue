@@ -2,27 +2,24 @@
 <template>
     <!-- 文章详情页面 -->
     <div id="detail-article">
-        <!--<p> 文章详情页面 </p>-->
-        <header>
-            <BlogHeader></BlogHeader>
-        </header>
+
         <div id="body-container">
-            <!--<nav >-->
-                <!--<SideBar></SideBar>-->
-            <!--</nav>-->
-            <main>
-                <v-layout style="background-color: #424242;">
-                    <v-flex xs12 offset-xs2 style="background-color: #424242;">
-                        <main style="background-color: #424242;">
+
+            <v-container fluid>
+                <v-layout style="background-color: #ECEFF1;" fluid>
+                    <v-flex xs10 offset-xs1 style="background-color: #ECEFF1;">
+                        <main style="background-color: #ECEFF1;">
                             <PostDetail></PostDetail>
                         </main>
                     </v-flex>
-                </v-layout>
-            </main>
 
-            <aside >
-                <DirectoryBar></DirectoryBar>
-            </aside>
+                    <v-flex>
+                        <aside >
+                            <DirectoryBar></DirectoryBar>
+                        </aside>
+                    </v-flex>
+                </v-layout>
+            </v-container>
         </div>
         <footer>
             <BlogFooter></BlogFooter>
@@ -45,32 +42,6 @@ export default {
 
 <style scoped>
 #detail-article {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-/*header,*/
-/*footer {*/
-/*flex: 1;*/
-/*}*/
-
-#body-container {
-  display: flex;
-  flex: 1;
-  background-color: #424242;
-}
-
-main {
-  flex: 1;
-  background-color: #424242;
-}
-
-aside {
-  flex: 0 0 12em;
-}
-
-nav {
-  order: -1;
+  background: #eceff1;
 }
 </style>

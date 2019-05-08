@@ -29,18 +29,18 @@
 </template>
 
 <script>
-import axios from "axios";
-import { protocol, search_tag_url } from "../constexpr";
+// import axios from "axios";
+import { search_tag_url } from "../constexpr";
 import PostList from "../components/PostList";
 import BlogHeader from "../components/BlogHeader";
 import DirectoryBar from "../components/DirectoryBar";
 import BlogFooter from "../components/BlogFooter";
 
-let reqUrl = protocol + search_tag_url;
+// let reqUrl = protocol + search_tag_url;
 // only support tag now
 export default {
   name: "BlogSearchPage",
-  components: {BlogFooter, DirectoryBar, PostList, BlogHeader,  },
+  components: { BlogFooter, DirectoryBar, PostList, BlogHeader },
   created: function() {
     // let req_url = reqUrl + this.$route.query.tag + "/posts/?page=1";
     // console.log("req_url:" + req_url);
